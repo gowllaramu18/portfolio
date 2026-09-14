@@ -1,0 +1,575 @@
+/* =========================================
+   HOME SECTION
+========================================= */
+
+.home {
+  min-height: calc(100vh - 78px);
+  width: 100%;
+  padding: 80px 7%;
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(81, 69, 255, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(22, 140, 255, 0.12),
+      transparent 35%
+    ),
+    #020b24;
+
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.home-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 70px;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.home-content {
+  width: 53%;
+  z-index: 2;
+}
+
+
+/* Small Hello Text */
+
+.home-intro {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+
+  color: #2994ff;
+}
+
+
+/* Name */
+
+.home-content h1 {
+  margin: 0;
+
+  font-size: clamp(55px, 6vw, 85px);
+  font-weight: 800;
+  line-height: 1.05;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 10px rgba(22, 140, 255, 0.25),
+    0 0 30px rgba(22, 140, 255, 0.15);
+}
+
+
+/* Job Title */
+
+.home-content h2 {
+  margin: 18px 0 20px;
+
+  font-size: clamp(27px, 3vw, 42px);
+  font-weight: 700;
+  line-height: 1.2;
+
+  background: linear-gradient(
+    90deg,
+    #168cff,
+    #2994ff,
+    #5145ff,
+    #7b3cff
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  filter: drop-shadow(
+    0 0 15px rgba(81, 69, 255, 0.25)
+  );
+}
+
+
+/* Description */
+
+.home-description {
+  max-width: 650px;
+
+  margin: 0 0 35px;
+
+  font-size: 17px;
+  line-height: 1.8;
+
+  color: #cbd7ed;
+
+  letter-spacing: 0.2px;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.home-buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 155px;
+  padding: 13px 25px;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+
+/* Primary Button */
+
+.primary-btn {
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #168cff,
+    #5145ff
+  );
+
+  border: 1px solid rgba(41, 148, 255, 0.8);
+
+  box-shadow:
+    0 0 12px rgba(22, 140, 255, 0.45),
+    0 0 30px rgba(81, 69, 255, 0.2);
+}
+
+
+.primary-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 18px rgba(22, 140, 255, 0.8),
+    0 0 40px rgba(81, 69, 255, 0.45);
+}
+
+
+/* Secondary Button */
+
+.secondary-btn {
+  color: #ffffff;
+
+  background: rgba(9, 24, 52, 0.75);
+
+  border: 1px solid rgba(66, 130, 230, 0.5);
+
+  backdrop-filter: blur(10px);
+}
+
+
+.secondary-btn:hover {
+  transform: translateY(-4px);
+
+  border-color: #2994ff;
+
+  background: rgba(22, 140, 255, 0.1);
+
+  box-shadow:
+    0 0 15px rgba(22, 140, 255, 0.45);
+}
+
+
+/* =========================================
+   RIGHT SIDE PHOTO
+========================================= */
+
+.home-image {
+  width: 47%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================
+   PHOTO WRAPPER
+========================================= */
+
+.home-photo-wrapper {
+  position: relative;
+
+  /*
+    Bigger circle so more of your
+    shoulders + T-shirt can be visible
+  */
+  width: 450px;
+  height: 450px;
+
+  padding: 7px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #168cff 0%,
+    #2994ff 30%,
+    #5145ff 65%,
+    #7b3cff 100%
+  );
+
+  box-shadow:
+    0 0 20px rgba(22, 140, 255, 0.85),
+    0 0 45px rgba(22, 140, 255, 0.5),
+    0 0 90px rgba(81, 69, 255, 0.35);
+
+  transition: all 0.4s ease;
+
+  animation: homePhotoGlow 4s ease-in-out infinite;
+}
+
+
+/* Outer Glow Ring */
+
+.home-photo-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -15px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(41, 148, 255, 0.35);
+
+  box-shadow:
+    0 0 20px rgba(22, 140, 255, 0.35),
+    inset 0 0 20px rgba(81, 69, 255, 0.2);
+
+  z-index: -1;
+}
+
+
+/* Second Glow Ring */
+
+.home-photo-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -30px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(81, 69, 255, 0.12);
+
+  z-index: -2;
+}
+
+
+/* =========================================
+   ACTUAL PHOTO
+========================================= */
+
+.home-photo {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  border-radius: 50%;
+
+  /*
+    IMPORTANT:
+    Cover keeps the circle filled,
+    while object-position moves the image
+    to show more body.
+  */
+  object-fit: cover;
+
+  /*
+    Move image DOWN inside the circle.
+
+    35% = more head + shoulders/T-shirt
+    visible compared with 18%.
+  */
+  object-position: center 35%;
+
+  border: 5px solid #020b24;
+
+  background: #07152f;
+
+  transition: all 0.4s ease;
+}
+
+
+/* =========================================
+   PHOTO HOVER
+========================================= */
+
+.home-photo-wrapper:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow:
+    0 0 25px rgba(22, 140, 255, 0.95),
+    0 0 55px rgba(22, 140, 255, 0.65),
+    0 0 100px rgba(81, 69, 255, 0.45);
+}
+
+
+.home-photo-wrapper:hover .home-photo {
+  border-color: #07152f;
+}
+
+
+/* =========================================
+   PHOTO ANIMATION
+========================================= */
+
+@keyframes homePhotoGlow {
+
+  0% {
+    box-shadow:
+      0 0 20px rgba(22, 140, 255, 0.75),
+      0 0 45px rgba(22, 140, 255, 0.4),
+      0 0 80px rgba(81, 69, 255, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 30px rgba(22, 140, 255, 0.95),
+      0 0 60px rgba(22, 140, 255, 0.55),
+      0 0 100px rgba(81, 69, 255, 0.4);
+  }
+
+  100% {
+    box-shadow:
+      0 0 20px rgba(22, 140, 255, 0.75),
+      0 0 45px rgba(22, 140, 255, 0.4),
+      0 0 80px rgba(81, 69, 255, 0.25);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+
+  .home {
+    padding: 70px 5%;
+  }
+
+  .home-container {
+    gap: 45px;
+  }
+
+  .home-photo-wrapper {
+    width: 390px;
+    height: 390px;
+  }
+
+  .home-content h1 {
+    font-size: 65px;
+  }
+
+  .home-content h2 {
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================
+   SMALL LAPTOP / TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .home {
+    padding: 70px 5%;
+  }
+
+  .home-container {
+    flex-direction: column;
+
+    text-align: center;
+
+    gap: 60px;
+  }
+
+  .home-content {
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .home-image {
+    width: 100%;
+  }
+
+  .home-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-buttons {
+    justify-content: center;
+  }
+
+  .home-photo-wrapper {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .home {
+    min-height: auto;
+
+    padding: 65px 6% 80px;
+  }
+
+  .home-container {
+    gap: 55px;
+  }
+
+  .home-intro {
+    font-size: 18px;
+  }
+
+  .home-content h1 {
+    font-size: 55px;
+  }
+
+  .home-content h2 {
+    font-size: 28px;
+  }
+
+  .home-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .home-photo-wrapper {
+    width: 330px;
+    height: 330px;
+  }
+
+  .home-photo {
+    /*
+      Keep shoulders/T-shirt visible
+      on mobile also.
+    */
+    object-position: center 35%;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .home {
+    padding: 55px 5% 70px;
+  }
+
+  .home-content h1 {
+    font-size: 46px;
+  }
+
+  .home-content h2 {
+    font-size: 24px;
+  }
+
+  .home-description {
+    font-size: 15px;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .home-photo-wrapper {
+    width: 290px;
+    height: 290px;
+  }
+
+  .home-photo {
+    object-position: center 35%;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+  .home-content h1 {
+    font-size: 40px;
+  }
+
+  .home-content h2 {
+    font-size: 21px;
+  }
+
+  .home-photo-wrapper {
+    width: 255px;
+    height: 255px;
+  }
+
+  .home-photo {
+    object-position: center 35%;
+  }
+}
